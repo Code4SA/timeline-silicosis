@@ -5,14 +5,46 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Silicosis Timeline</title>
-  <link rel="stylesheet" href="css/jquery-vertical-timeline.css">
-  <script type="text/javascript" src="js/jquery-vertical-timeline.js"></script>
+  <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+  <link rel="stylesheet" href="dist/jquery-vertical-timeline.min.css">
+  <link rel="stylesheet" href="example/style.css">
+
 </head>
 
 <body>
 
 <p>Basic line of text</p>
 
+<div class="example">
+<h1>Kitten JSON Example</h1>
+<a class="spreadsheet-link" href="https://github.com/MinnPost/jquery-vertical-timeline/blob/master/example/example.json">JSON</a>
+<pre><code>// Uses example/example.json data soure
+{
+  data: data,
+  width: '75%',
+  handleResize: true
+}</code></pre>
+<div class="timeline-jquery-example-kitten cf"></div>
+</div>
+
+
+
+
+<!-- Include scripts -->
+  <script type="text/javascript" src="dist/jquery-vertical-timeline.libs.js"></script>
+  <script type="text/javascript" src="dist/jquery-vertical-timeline.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $.getJSON('./example/example.json', function(data) {
+        $('.timeline-jquery-example-kitten').verticalTimeline({
+          data: data,
+          width: '75%',
+          handleResize: true
+        });
+      });
+    });
+  </script>
 
 
 </body>
